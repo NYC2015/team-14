@@ -463,3 +463,7 @@ footer .footer-below {
     border-color: #c4127e;
 
 }
+
+.space {
+    min-height: 100px;
+}

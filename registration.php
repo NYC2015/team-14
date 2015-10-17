@@ -70,9 +70,10 @@
 </nav>
 
 <!-- Header -->
+
+<div class="space"></div>
 <section id="portfolio">
     <div id="page-wrapper">
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -105,7 +106,7 @@
                         <input class="form-control" placeholder="Enter Last Name" name="lname">
                     </div>
 
-                    <button type="submit" name="submit" class="btn btn-default">Login</button>
+                    <button type="submit" name="submit" class="btn btn-default">Register!</button>
 
                 </form>
             </div>
