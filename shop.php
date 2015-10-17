@@ -134,7 +134,7 @@
                         <a href="preferences.php">Preferences</a>
                     </li>
                     <li>
-                        <a href="#">Q&A</a>
+                        <a href="Q&AForLogedIn.html">Q&A</a>
                     </li>
                     <li>
                         <a href="#">Log Off</a>
