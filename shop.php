@@ -39,13 +39,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">FoodBuddy</a>
+                <a class="navbar-brand" href="shop.html">FoodBuddy</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Profile</a>
+                        <a href="profile.html">Profile</a>
                     </li>
                     <li>
                         <a href="cart.html">Cart</a>
@@ -64,7 +64,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="searchbar" role="search">
+				<form class="searchbar" value="search" role="search">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search vendors, food, etc...">
                     <span class="input-group-btn">
@@ -77,9 +77,8 @@
 			</div>
 		</div>
 	</div>
-	
 	<br>
-	
+
     <!-- Page Content -->
     <div class="container">
 
@@ -92,7 +91,7 @@
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <div class="caption">
-                                <h4><a href="#">First Product</a>
+                                <h4 value="product"><a href="#">First Product</a>
                                 </h4>
                                 <p>Placeholder</a>.</p>
                             </div>

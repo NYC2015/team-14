@@ -9,13 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FoodBuddy</title>
+    <title>FoodBuddy Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+	
+	<link href="css/preferences-page.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,13 +41,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">FoodBuddy</a>
+                <a class="navbar-brand" href="shop.html">FoodBuddy</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Profile</a>
+                        <a href="profile.html"><b>Profile</b></a>
                     </li>
                     <li>
                         <a href="cart.html">Cart</a>
@@ -64,15 +66,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<form class="searchbar" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search vendors, food, etc...">
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
+				<h2>Profile - Edit Preferences</h2>
 				</form>
 			</div>
 		</div>
@@ -85,30 +79,36 @@
 
         <div class="row">
 
-            <div class="col-md-9">
-
+            <div class="col-md-12">
+			<form action="preferences.html" method="get">
                 <div class="row">
+				<p><b>Dietary Preferences:</b></p>
+				<input type="checkbox" name="diet" value="Bike">Vegan<br>
+				<input type="checkbox" name="diet" value="Car">Vegetarian<br>
+				<input type="checkbox" name="diet" value="Car">Dairy-Free<br>
+				<input type="checkbox" name="diet" value="Car">Kosher<br>
+				<input type="checkbox" name="diet" value="Car">Gluten-Free<br>
+				<input type="checkbox" name="diet" value="Car">Low-Carb<br>
+				<input type="checkbox" name="diet" value="Car">Paleo<br>
+				<input type="checkbox" name="diet" value="Car">N/A<br>
+				</form>
 				
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h4><a href="#">First Product</a>
-                                </h4>
-                                <p>Placeholder</a>.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
+				<br>
+				
+				<p><b>Health Restrictions:</b></p>
+				<input type="checkbox" name="health" value="Bike">Celiac's Disease<br>
+				<input type="checkbox" name="health" value="Car">Diabetes<br>
+				<input type="checkbox" name="health" value="Car">Crohn's Disease<br>
+				<input type="checkbox" name="health" value="Car">Colitis<br>
+				<input type="checkbox" name="health" value="Car">Hypoglycemia<br>
+				<input type="checkbox" name="health" value="Car">Irritable Bowel Syndrome<br>
+				<input type="checkbox" name="health" value="Car">N/A<br>
+				<br>
+				<button type="submit" class="submitbut" value="Save">Save</button>
+				<br> <br>
+				<a href="profile.html" class="button">Return to Profile</a>
+				</form>
+           
                 </div>
 
             </div>
