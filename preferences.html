@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FoodBuddy Reservations</title>
+    <title>FoodBuddy Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 	
-	<link href="css/cart-page.css" rel="stylesheet">
+	<link href="css/preferences-page.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,10 +47,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="profile.html">Profile</a>
+                        <a href="profile.html"><b>Profile</b></a>
                     </li>
                     <li>
-                        <a href="cart.html"><b>Cart</b></a>
+                        <a href="cart.html">Cart</a>
                     </li>
                     <li>
                         <a href="#">Q&A</a>
@@ -66,7 +66,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Reservation Cart</h2>
+				<h2>Profile - Edit Preferences</h2>
 				</form>
 			</div>
 		</div>
@@ -80,32 +80,32 @@
         <div class="row">
 
             <div class="col-md-12">
-
+			<form action="shop.php" method="get">
                 <div class="row">
+				<p><b>Dietary Preferences:</b></p>
+				<input type="checkbox" name="diet" value="Bike">Vegan<br>
+				<input type="checkbox" name="diet" value="Car">Vegetarian<br>
+				<input type="checkbox" name="diet" value="Car">Dairy-Free<br>
+				<input type="checkbox" name="diet" value="Car">Kosher<br>
+				<input type="checkbox" name="diet" value="Car">Gluten-Free<br>
+				<input type="checkbox" name="diet" value="Car">Low-Carb<br>
+				<input type="checkbox" name="diet" value="Car">Paleo<br>
+				<input type="checkbox" name="diet" value="Car">N/A<br>
+				</form>
 				
-				<table class="table table-striped">
-				 <tr>
-					<th>Day</th>
-					<th>Time</th>
-					<th>Location</th>					
-					<th>Food Name</th>
-					<th>Amount</th>
-				 </tr>
-				 <tr>
-					<td>Monday</td>
-					<td>9:30 pm</td>
-					<td>Sam's Mart</td>
-					<td>Bananas</td>
-					<td>2 lbs.</td> 
-				  </tr>
-				  <tr> 
-					<td>Monday</td>
-					<td>10:00 pm</td> 
-					<td>Key Food</td>
-					<td>Wheat Bread</td>
-					<td>1 loaf</td>
-				  </tr>
-				</table>
+				<br>
+				
+				<p><b>Health Restrictions:</b></p>
+				<input type="checkbox" name="health" value="Bike">Celiac's Disease<br>
+				<input type="checkbox" name="health" value="Car">Diabetes<br>
+				<input type="checkbox" name="health" value="Car">Crohn's Disease<br>
+				<input type="checkbox" name="health" value="Car">Colitis<br>
+				<input type="checkbox" name="health" value="Car">Hypoglycemia<br>
+				<input type="checkbox" name="health" value="Car">Irritable Bowel Syndrome<br>
+				<input type="checkbox" name="health" value="Car">N/A<br>
+				<br>
+				<button type="submit" class="submitbut" value="Save">Save</button>
+				</form>
            
                 </div>
 
