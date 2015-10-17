@@ -164,14 +164,6 @@
     <!-- Page Content -->
     <div class="container">
 	
-	<?php 
-		if ($_POST["diet"] !== 'N/A'){
-			foreach($_POST['diet'] as $key) {
-				echo $key;
-			}
-		}
-	?>
-	
         <div class="row">
 
             <div class="col-md-6">
