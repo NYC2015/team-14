@@ -60,7 +60,7 @@
                     <a href="#about">About</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Contact</a>
+                    <a href="index.html#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -70,7 +70,9 @@
 </nav>
 
 <!-- Header -->
-<header>
+<section id="portfolio">
+    <div id="page-wrapper">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -163,7 +165,8 @@
         ?>
 
     </div>
-</header>
+</div>
+</section>
 
 
 
