@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Food Buddy: Eat Smart, Be Smart</title>
+    <title>Register</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Food Buddy</a>
+            <a class="navbar-brand" href="#page-top">FoodBuddy Registration</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,13 +54,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="registration.php">Register</a>
+                    <a href="loginpage.php">Login</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#about">About</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Contact</a>
+                    <a href="index.html#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -69,65 +69,105 @@
     <!-- /.container-fluid -->
 </nav>
 
-
-<!-- Portfolio Grid Section -->
+<!-- Header -->
 <section id="portfolio">
     <div id="page-wrapper">
 
-        <div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form role="form" method="post">
 
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Login
-                    </h1>
-                    <p class="lead">
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input class="form-control" placeholder="Enter User Name" name="UserName">
+                    </div>
 
-                    </p>
-                </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" placeholder="Enter Password" name="Password">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Snap ID</label>
+                        <input class="form-control" placeholder="Snap ID" name="SnapID">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input class="form-control" placeholder="Enter First Name" name="fname">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input class="form-control" placeholder="Enter Last Name" name="lname">
+                    </div>
+
+                    <button type="submit" name="submit" class="btn btn-default">Login</button>
+
+                </form>
             </div>
-            <!-- /.row -->
 
-            <div class="row">
-                <div class="col-lg-12">
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6">
-
-                    <form role="form" method="post">
-
-
-                        <div class="form-group">
-                            <label>User Name</label>
-                            <input class="form-control" placeholder="Enter User Name" name="UserName">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input class="form-control" placeholder="Enter Password" name="Password">
-                        </div>
-
-                        <button type="submit" name="submit" class="btn btn-default">Login</button>
-                        <button type="submit" name="submit" class="btn btn-default">Register</button>
-                        <button type="submit" name="submit" class="btn btn-default">Forgot Password</button>
-
-                    </form>
-
-                </div>
-            </div>
-            <!-- /.row -->
 
         </div>
-        <!-- /.container-fluid -->
+
+        <?php
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+        if(isset($_POST['submit'])) {
+
+            #Connecting to Local Server
+            $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'foodbuddy_db');
+            mysqli_set_charset($dbc, 'utf8');
+
+
+            #Setting up the Variables
+            $whichUserName = $_POST['UserName'];
+            $whichPassword = $_POST['Password'];
+            $whichlName = $_POST['lname'];
+            $whichfName = $_POST['fname'];
+            $whichSnapID = $_POST['SnapID'];
+
+            $q = 'INSERT INTO members(snap_id, username, password, fname, lname) VALUES(' . $whichSnapID . ", '" . $whichUserName . "', '" . $whichPassword . "', '" .$whichfName . "', '" . $whichlName . "')";
+            echo $q;
+            $r = mysqli_query($dbc, $q);
+
+            /*explame of looping through a response
+            $ids = array();
+            $users = array();
+            $passwords = array();
+            $fname = array();
+            $lname = array();
+
+            while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
+                array_push($ids, $row[0]);
+                array_push($users, $row[1]);
+                array_push($passwords, $row[2]);
+                array_push($fname, $row[3]);
+                array_push($lname, $row[4]);
+
+            }
+
+            for ($counter = 0; $counter < count($ids); $counter++) {
+                echo $ids[$counter];
+            }
+            */
+        }
+
+        else
+        {
+
+        }
+
+
+        ?>
 
     </div>
-    <!-- /#page-wrapper -->
-
+</div>
 </section>
+
 
 
 <!-- Footer -->
