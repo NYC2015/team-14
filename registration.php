@@ -132,7 +132,7 @@
             $whichSnapID = $_POST['SnapID'];
 
             $q = 'INSERT INTO receiver(SNAP_id, username_receiver, password_receiver, fname, lname) VALUES(' . $whichSnapID . ", '" . $whichUserName . "', '" . $whichPassword . "', '" .$whichfName . "', '" . $whichlName . "')";
-            echo $q;
+            #echo $q;
             $r = mysqli_query($dbc, $q);
 
             /*explame of looping through a response

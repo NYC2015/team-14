@@ -127,7 +127,7 @@
             if(isset($_POST['submit'])) {
 
                 #Connecting to Local Server
-                $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'foodbuddy_db');
+                $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
                 mysqli_set_charset($dbc, 'utf8');
 
 
@@ -135,8 +135,8 @@
                 $whichUserName = $_POST['UserName'];
                 $whichPassword = $_POST['Password'];
 
-                $q = "Select * from members where username='" . $whichUserName . "' and password='" . $whichPassword . "'";
-                echo $q;
+                $q = "Select * from receiver where username_receiver='" . $whichUserName . "' and password_receiver='" . $whichPassword . "'";
+                #echo $q;
                 $r = mysqli_query($dbc, $q);
 
 
@@ -164,8 +164,8 @@
                 }
                 else
                 {
-                    $q = "Select * from vendors where username='" . $whichUserName . "' and password='" . $whichPassword . "'";
-                    echo $q;
+                    $q = "Select * from vendors where username_receiver='" . $whichUserName . "' and password_receiver='" . $whichPassword . "'";
+                    #echo $q;
                     $r = mysqli_query($dbc, $q);
 
                     $vendorID = array();
@@ -187,7 +187,7 @@
 
                     else
                     {
-                        echo "no vednor";
+                        echo '<script>alert("The password and/or user name is not correct")</script>';
                     }
                 }
 
