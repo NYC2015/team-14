@@ -6,59 +6,89 @@ $(function() {
     Morris.Area({
         element: 'morris-area-chart',
         data: [{
-            period: '2010 Q1',
-            iphone: 2666,
-            ipad: null,
-            itouch: 2647
+            d: '2015-10-01',
+            fruits: 21,
+            diary: null,
+            grains: 15
         }, {
-            period: '2010 Q2',
-            iphone: 2778,
-            ipad: 2294,
-            itouch: 2441
-        }, {
-            period: '2010 Q3',
-            iphone: 4912,
-            ipad: 1969,
-            itouch: 2501
-        }, {
-            period: '2010 Q4',
-            iphone: 3767,
-            ipad: 3597,
-            itouch: 5689
-        }, {
-            period: '2011 Q1',
-            iphone: 6810,
-            ipad: 1914,
-            itouch: 2293
-        }, {
-            period: '2011 Q2',
-            iphone: 5670,
-            ipad: 4293,
-            itouch: 1881
-        }, {
-            period: '2011 Q3',
-            iphone: 4820,
-            ipad: 3795,
-            itouch: 1588
-        }, {
-            period: '2011 Q4',
-            iphone: 15073,
-            ipad: 5967,
-            itouch: 5175
-        }, {
-            period: '2012 Q1',
-            iphone: 10687,
-            ipad: 4460,
-            itouch: 2028
-        }, {
-            period: '2012 Q2',
-            iphone: 8432,
-            ipad: 5713,
-            itouch: 1791
+            d: '2015-10-02',
+            fruits: 31,
+            diary: 5,
+            grains: 8
+        },  {
+            d: '2015-10-03',
+            fruits: 54,
+            diary: 30,
+            grains: 44
+        },  {
+            d: '2015-10-04',
+            fruits: 32,
+            diary: 13,
+            grains: 91
+        },  {
+            d: '2015-10-05',
+            fruits: 43,
+            diary: 5,
+            grains: 11
+        },  {
+            d: '2015-10-06',
+            fruits: 84,
+            diary: 57,
+            grains: 79
+        },  {
+            d: '2015-10-07',
+            fruits: 54,
+            diary: 34,
+            grains: 73
+        },  {
+            d: '2015-10-08',
+            fruits: 23,
+            diary: 14,
+            grains: 23
+        },  {
+            d: '2015-10-09',
+            fruits: 76,
+            diary: 55,
+            grains: 34
+        },  {
+            d: '2015-10-10',
+            fruits: 48,
+            diary: 32,
+            grains: 35
+        },  {
+            d: '2015-10-11',
+            fruits: 15,
+            diary: 14,
+            grains: 13
+        },  {
+            d: '2015-10-12',
+            fruits: 12,
+            diary: 5,
+            grains: 7
+        },  {
+            d: '2015-10-13',
+            fruits: 35,
+            diary: 42,
+            grains: 32
+        },  {
+            d: '2015-10-14',
+            fruits: 82,
+            diary: 51,
+            grains: 61
+        },  {
+            d: '2015-10-15',
+            fruits: 76,
+            diary: 43,
+            grains: 23
+        },  {
+            d: '2015-10-16',
+            fruits: 89,
+            diary: 53,
+            grains: 21
         }],
-        xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        xkey: 'd',
+        ykeys: ['fruits', 'diary', 'grains'],
+        labels: ['Fruits', 'Diary', 'Grains'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
