@@ -86,7 +86,7 @@
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" placeholder="Enter Password" name="Password">
+                        <input type="password" class="form-control" placeholder="Enter Password" name="Password">
                     </div>
 
 
@@ -120,7 +120,7 @@
         if(isset($_POST['submit'])) {
 
             #Connecting to Local Server
-            $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'foodbuddy_db');
+            $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
             mysqli_set_charset($dbc, 'utf8');
 
 
@@ -131,30 +131,9 @@
             $whichfName = $_POST['fname'];
             $whichSnapID = $_POST['SnapID'];
 
-            $q = 'INSERT INTO members(snap_id, username, password, fname, lname) VALUES(' . $whichSnapID . ", '" . $whichUserName . "', '" . $whichPassword . "', '" .$whichfName . "', '" . $whichlName . "')";
+            $q = 'INSERT INTO receiver(receiver_id, SNAP_id, username_receiver, password_receiver, SNAP_plan, account_balance, fname, lname) VALUES(' . $whichSnapID . ", '" . $whichUserName . "', '" . $whichPassword . "', '" .$whichfName . "', '" . $whichlName . "')";
             echo $q;
             $r = mysqli_query($dbc, $q);
-
-            /*explame of looping through a response
-            $ids = array();
-            $users = array();
-            $passwords = array();
-            $fname = array();
-            $lname = array();
-
-            while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
-                array_push($ids, $row[0]);
-                array_push($users, $row[1]);
-                array_push($passwords, $row[2]);
-                array_push($fname, $row[3]);
-                array_push($lname, $row[4]);
-
-            }
-
-            for ($counter = 0; $counter < count($ids); $counter++) {
-                echo $ids[$counter];
-            }
-            */
         }
 
         else
