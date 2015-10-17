@@ -1,3 +1,3 @@
-Testing
+Team 14: Foodbuddy
 
-test
+Mobile app to find and donate food.
