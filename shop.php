@@ -152,6 +152,7 @@
 			<div class="col-md-12">
 				<form class="searchbar" role="search">
                 <div class="input-group">
+                    <h2>Search for groceries here!<span class="glyphicon glyphicon-cutlery"></span></h2>
                     <input type="text" class="form-control" placeholder="Search vendors, food, etc...">
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default">
