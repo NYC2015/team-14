@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FoodBuddy Profile</title>
+    <title>FoodBuddy Profile<span class= "glyphicon glyphicon-user"></span></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
