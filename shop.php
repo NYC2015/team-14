@@ -183,31 +183,28 @@
 	$q = 'SELECT * FROM food;';
 		$r = mysqli_query($dbc, $q);
 	
-		$vendorname = array();
 		$name = array();
 		$weight = array();
 		$type = array();
-		$date = array();
 
 		while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
-			array_push($name, $row[0]);
+			array_push($name, $row[3]);
 			array_push($weight, $row[1]);
 			array_push($type, $row[2]);
 		}
 		
-		for ($counter = 0; $counter < count($name==TRUE); $counter++) {
+		for ($counter = 0; $counter < count($name); $counter++) {
 			echo'<div class="col-sm-10 col-lg-4 col-md-4">
 					<div class="container">
                         <div class="thumbnail">
-
                             <div class="caption">';
                             echo '<h4><a href="#">' . $name[$counter] . '</a>
                                 </h4>';
                              echo '<p>Weight: ' . $weight[$counter] . '</a></p>
-									<p>Type: ' . $type[$counter] . '</a></p>
+									<p>Type: ' . $type[$counter] . '</a></p>';
 									
-							<div class="ratings">
-                                <p class="pull-right">15 reviews</p>
+							 echo '<div class="ratings">';
+                             echo  '<p class="pull-right">15 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -215,12 +212,15 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                 </p>
-                            </div>
-							<div class="col-sm-4 col-lg-4 col-md-4">
-								<div class="thumbnail">
+							</div>
+						</div>
+					</div>
+				</div>';
+							echo '<div class="col-sm-4 col-lg-4 col-md-4">';
+							echo'	<div class="thumbnail">
 								<p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
                                 <button class="btn btn-primary">Reserve!</button>
-								</div>
+								</div>																																													
 							</div>';
 						}
 				?>
