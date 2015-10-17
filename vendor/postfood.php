@@ -255,15 +255,11 @@
                         <input type="hidden" id="dtp_input1" value="" /><br/>
                     </div>
                     <div class="row">
-                    <center>
-                        <button type="submit" name="submit" class="btn btn-primary">Post!</button>
-                        </center>
                     </div>
-                    </form>
                 </div>
 				<?php 
 				#Connecting to Local Server
-				$dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'foodbuddy_db');
+				$dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
 				mysqli_set_charset($dbc, 'utf8');
 				
 				$whichweight = $_POST["weight"];
@@ -275,7 +271,10 @@
 				$r = mysqli_query($dbc, $q);
 				
 				?>
-				
+				<center>
+					<button type="submit" name="submit" class="btn btn-primary">Post!</button>
+				</center>
+				</form>
                 <div class="col-lg-12">
                         <h2>Active posts</h2>
                         <div class="table-responsive">
