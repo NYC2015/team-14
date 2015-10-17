@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Food Buddy: Eat Smart, Be Smart</title>
+    <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Food Buddy</a>
+            <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,7 +54,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="registration.php">Register</a>
+                    <a href="#portfolio">Portfolio</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#about">About</a>
@@ -112,13 +112,93 @@
                         </div>
 
                         <button type="submit" name="submit" class="btn btn-default">Login</button>
-                        <button type="submit" name="submit" class="btn btn-default">Register</button>
-                        <button type="submit" name="submit" class="btn btn-default">Forgot Password</button>
+
+                        <button type="button" name="test" class="btn btn-default">Register</button>
+                        <button type="button" name="test1" class="btn btn-default">Forgot Password</button>
 
                     </form>
 
                 </div>
             </div>
+
+            <?php
+            if(isset($_POST['submit'])) {
+
+                #Connecting to Local Server
+                $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'foodbuddy_db');
+                mysqli_set_charset($dbc, 'utf8');
+
+
+                #Setting up the Variables
+                $whichUserName = $_POST['UserName'];
+                $whichPassword = $_POST['Password'];
+
+                $q = "Select * from members where username='" . $whichUserName . "' and password='" . $whichPassword . "'";
+                echo $q;
+                $r = mysqli_query($dbc, $q);
+
+
+
+                $ids = array();
+                $users = array();
+                $passwords = array();
+                $fname = array();
+                $lname = array();
+
+
+                while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
+                    array_push($ids, $row[0]);
+                    array_push($users, $row[1]);
+                    array_push($passwords, $row[2]);
+                    array_push($fname, $row[3]);
+                    array_push($lname, $row[4]);
+
+                }
+
+                if($ids != null)
+                {
+                    echo "<script type=\"text/javascript\">location.href = 'shop.php';</script>";
+
+                }
+                else
+                {
+                    $q = "Select * from vendors where username='" . $whichUserName . "' and password='" . $whichPassword . "'";
+                    echo $q;
+                    $r = mysqli_query($dbc, $q);
+
+                    $vendorID = array();
+                    while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
+                        array_push($vendorID, $row[0]);
+                        array_push($users, $row[1]);
+                        array_push($passwords, $row[2]);
+                        array_push($fname, $row[3]);
+                        array_push($lname, $row[4]);
+
+                    }
+
+
+                    if($vendorID != null)
+                    {
+                        echo "<script type=\"text/javascript\">location.href = '/vendor/index.html';</script>";
+
+                    }
+
+                    else
+                    {
+                        echo "no vednor";
+                    }
+                }
+
+            }
+
+            else
+            {
+
+            }
+
+
+            ?>
+
             <!-- /.row -->
 
         </div>
