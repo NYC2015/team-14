@@ -1,0 +1,32 @@
+/*!
+ * Start Bootstrap - Shop Homepage HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px;
+    color: #c4127e; 
+}
+.navbar{
+    background-color: #c4127e;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.h4{
+    color: #c4127e;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #c4127e;
+}
+
+footer {
+    margin: 50px 0;
+}
