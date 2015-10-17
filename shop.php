@@ -17,6 +17,8 @@
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,6 +41,29 @@
         
         // Show the Google map in the div with the attribute id 'map-canvas'.
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        var locations = [
+          ['Bondi Beach', 40.7684738,-73.9853238, 5],
+          ['Coogee Beach', 40.7564292,-73.9795085, 5],
+          ['Cronulla Beach', 40.7521349,-73.9894895, 5],
+          ['Manly Beach', 40.7613787,-73.976162, 5],
+          ['Maroubra Beach', 40.7564290,-73.9795080, 5]
+        ];
+
+        for (i = 0; i < locations.length; i++) {  
+            console.log("in loop");
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+      }
     }
     
     // Update the Google map for the user's inputted address
@@ -182,11 +207,40 @@
                                 <h4><a href="#">Banana</a></h4>
                                 <p>6 lbs.</p>
                                 <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
-                                <button class="btn btn-primary">Reserve!</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#foodreserve">Reserve!</button>
                             <!-- </div> -->
                         </div>
                     </div>
-
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <!-- <div class="caption"> -->
+                                <h4><a href="#">Bread</a></h4>
+                                <p>10 lbs.</p>
+                                <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#foodreserve">Reserve!</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <!-- <div class="caption"> -->
+                                <h4><a href="#">Apples</a></h4>
+                                <p>5 lbs.</p>
+                                <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#foodreserve">Reserve!</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <!-- <div class="caption"> -->
+                                <h4><a href="#">Milk</a></h4>
+                                <p>3 lbs.</p>
+                                <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#foodreserve">Reserve!</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
                     <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
@@ -210,6 +264,40 @@
                   </div>
                 </div>
 
+                <div id="foodreserve" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Reserve Free Food!</h4>
+                        <h4 class="modal-title">Bread at Whole Foods</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-group col-lg-6">
+                            <label>How much (in pounds)?</label>
+                            <input class="form-control" type="number">
+                        </div>
+                        
+                        <div class="form-group col-lg-6">
+                            <label>When are you coming to pick it up?</label>
+                            <div class="input-append date form_datetime" data-date="2015-10-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                <input class="form-control" type="text" value="" readonly>
+                                <span class="add-on"><i class="icon-remove"></i></span>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
+                            <input type="hidden" id="dtp_input1" value="" /><br/>
+                            <button class="btn btn-primary">Reserve!</button>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
                 </div>
 
             </div>
@@ -253,6 +341,19 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $('.form_datetime').datetimepicker({
+            weekStart: 7,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1
+        });
+    </script>
 
 </body>
 
