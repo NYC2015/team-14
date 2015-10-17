@@ -9,15 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FoodBuddy Reservations</title>
+    <title>FoodBuddy</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
-	
-	<link href="css/cart-page.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +48,7 @@
                         <a href="#">Profile</a>
                     </li>
                     <li>
-                        <a href="cart.html"><b>Cart</b></a>
+                        <a href="cart.html">Cart</a>
                     </li>
                     <li>
                         <a href="#">Q&A</a>
@@ -66,47 +64,50 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Reservation Cart</h2>
+				<form class="searchbar" value="search" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search vendors, food, etc...">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
 	<br>
-	
+
     <!-- Page Content -->
     <div class="container">
 
         <div class="row">
 
-            <div class="col-md-12">
+            <div class="col-md-9">
 
                 <div class="row">
 				
-				<table class="table table-striped">
-				 <tr>
-					<th>Day</th>
-					<th>Time</th>
-					<th>Location</th>					
-					<th>Food Name</th>
-					<th>Amount</th>
-				 </tr>
-				 <tr>
-					<td>Monday</td>
-					<td>9:30 pm</td>
-					<td>Sam's Mart</td>
-					<td>Bananas</td>
-					<td>2 lbs.</td> 
-				  </tr>
-				  <tr> 
-					<td>Monday</td>
-					<td>10:00 pm</td> 
-					<td>Key Food</td>
-					<td>Wheat Bread</td>
-					<td>1 loaf</td>
-				  </tr>
-				</table>
-           
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h4 value="product"><a href="#">First Product</a>
+                                </h4>
+                                <p>Placeholder</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
