@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand" href="#page-top">FoodBuddy Login</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,14 +54,15 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#portfolio">Portfolio</a>
+                    <a href="index.html">Home Page</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#about">About</a>
+                    <a href="registration.php">Register</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Contact</a>
+                    <a href="Q&A.html">Q&A</a>
                 </li>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -113,7 +114,8 @@
 
                         <button type="submit" name="submit" class="btn btn-default">Login</button>
 
-                        <button type="button" name="test" class="btn btn-default">Register</button>
+                        <button type="button" name="test" class="btn btn-default" onclick="window.location= 'registration.php';">Register</button>
+
                         <button type="button" name="test1" class="btn btn-default">Forgot Password</button>
 
                     </form>

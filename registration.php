@@ -57,7 +57,7 @@
                     <a href="loginpage.php">Login</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#about">About</a>
+                    <a href="Q&A.html">Q&A</a>
                 </li>
                 <li class="page-scroll">
                     <a href="index.html#contact">Contact</a>
