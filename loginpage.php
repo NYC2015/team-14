@@ -54,7 +54,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#portfolio">Portfolio</a>
+                    <a href="registration.html">Register</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#about">About</a>
