@@ -86,7 +86,7 @@
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" placeholder="Enter Password" name="Password">
+                        <input class="form-control" placeholder="Enter Password" name="Password" type="password">
                     </div>
 
 
@@ -120,7 +120,7 @@
         if(isset($_POST['submit'])) {
 
             #Connecting to Local Server
-            $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'foodbuddy_db');
+            $dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
             mysqli_set_charset($dbc, 'utf8');
 
 
@@ -131,7 +131,7 @@
             $whichfName = $_POST['fname'];
             $whichSnapID = $_POST['SnapID'];
 
-            $q = 'INSERT INTO members(snap_id, username, password, fname, lname) VALUES(' . $whichSnapID . ", '" . $whichUserName . "', '" . $whichPassword . "', '" .$whichfName . "', '" . $whichlName . "')";
+            $q = 'INSERT INTO receiver(snap_id, username, password, fname, lname) VALUES(' . $whichSnapID . ", '" . $whichUserName . "', '" . $whichPassword . "', '" .$whichfName . "', '" . $whichlName . "')";
             echo $q;
             $r = mysqli_query($dbc, $q);
 

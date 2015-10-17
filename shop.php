@@ -93,7 +93,6 @@
     
     // Call the method 'Init()' to display the google map when the web page is displayed ( load event )
     google.maps.event.addDomListener( window, 'load', Init );
-
     </script>
     <style>
     /* style settings for Google map */
@@ -123,7 +122,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="profile.html">Profile</a>
                     </li>
@@ -131,7 +130,13 @@
                         <a href="cart.html">Cart</a>
                     </li>
                     <li>
-                        <a href="#">Q&A</a>
+                        <a href="preferences.php">Preferences</a>
+                    </li>
+                    <li>
+                        <a href="Q&AForLogedIn.html">Q&A</a>
+                    </li>
+                    <li>
+                        <a href="#">Log Off</a>
                     </li>
                 </ul>
 			
@@ -158,75 +163,57 @@
 			</div>
 		</div>
 	</div>
-	<br>
-	<?php
 	
-	#Connecting to Local Server
-	$dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
-	mysqli_set_charset($dbc, 'utf8');
-
-	$q = 'SELECT * FROM food;';
-		$r = mysqli_query($dbc, $q);
-	
-		$vendorname = array();
-		$name = array();
-		$weight = array();
-		$type = array();
-		$date = array();
-
-		while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
-			array_push($name, $row[0]);
-			array_push($weight, $row[1]);
-			array_push($type, $row[2]);
-		}
-		
-		for ($counter = 0; $counter < count($name==TRUE); $counter++) {
-			echo'<div class="col-sm-10 col-lg-4 col-md-4">
-					<div class="container">
-                        <div class="thumbnail">
-                            <div class="caption">';
-                            echo '<h4><a href="#">' . $name[$counter] . '</a>
-                                </h4>';
-                             echo '<p>Weight: ' . $weight[$counter] . '</a></p>
-									<p>Type: ' . $type[$counter] . '</a></p>
-									
-                            echo'</div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-				</div><br>';
-		}
-	
-	
-	if (isset($_POST["submit"])){
-		$keyword = $_POST["submit"];
-		
-		$q = 'SELECT * FROM food;';
-		echo $q;
-		$r = mysqli_query($dbc, $q);
-
-		$vendorname = array();
-	}
-	
-	?>
-	
-
 	<br>
 	
     <!-- Page Content -->
     <div class="container">
 	
         <div class="row">
-            <div class="col-sm-6">
+
+            <div class="col-md-6">
+
+                <div class="row">
+				
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <!-- <div class="caption"> -->
+                                <h4><a href="#">Banana</a></h4>
+                                <p>6 lbs.</p>
+                                <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
+                                <button class="btn btn-primary">Reserve!</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Whole Foods</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Address: 226 E 57th St, New York, NY 10022</p>
+                        <p>Phone: (646) 497-1222</p>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Follow!</button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
                 <div id='map-canvas' ></div><br/>
                 <div>
                     <label for="address"> Address:</label>
