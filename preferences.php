@@ -45,15 +45,22 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="profile.html"><b>Profile</b></a>
+                        <a href="shop.php">Shop</a>
                     </li>
+
                     <li>
                         <a href="cart.html">Cart</a>
                     </li>
                     <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <li>
                         <a href="#">Q&A</a>
+                    </li>
+                    <li>
+                        <a href="#">Log Off</a>
                     </li>
                 </ul>
 			
