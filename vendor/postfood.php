@@ -226,17 +226,17 @@
                     <form role="form" method='post'>
                     <div class="form-group col-lg-6">
                         <label>What's it called?</label>
-                        <input class="form-control" value="name" placeholder="Banana, bread, milk, etc.">
+                        <input class="form-control" value="name" name="name" type="text" placeholder="Banana, bread, milk, etc.">
                     </div>
 
                     <div class="form-group col-lg-6">
                         <label>What kind?</label>
-                        <select class="form-control">
-                            <option name="type" value="Fruit">Fruit</option>
-                            <option name="type" value="Dairy">Diary</option>
-                            <option name="type" value="Vegetable">Vegetable</option>
-                            <option name="type" value="Grain">Grain</option>
-                            <option name="type" value="Meat">Meat</option>
+                        <select name="type" class="form-control">
+                            <option name="type" type="text" value="Fruit">Fruit</option>
+                            <option name="type" type="text" value="Dairy">Diary</option>
+                            <option name="type" type="text" value="Vegetable">Vegetable</option>
+                            <option name="type" type="text" value="Grain">Grain</option>
+                            <option name="type" type="text" value="Meat">Meat</option>
                         </select>
                     </div>
 
@@ -247,8 +247,8 @@
                     
                     <div class="form-group col-lg-6">
                         <label>Expiration date/time?</label>
-                        <div class="input-append date form_datetime" data-date="2015-10-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                            <input class="form-control" type="text" value="" readonly>
+                        <div class="input-append date form_datetime" data-date="2015-10-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                            <input name = "date" class="form-control" type="text" value="" readonly>
                             <span class="add-on"><i class="icon-remove"></i></span>
                             <span class="add-on"><i class="icon-th"></i></span>
                         </div>
@@ -256,25 +256,27 @@
                     </div>
                     <div class="row">
                     </div>
-                </div>
-				<?php 
-				#Connecting to Local Server
-				$dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
-				mysqli_set_charset($dbc, 'utf8');
-				
-				$whichweight = $_POST["weight"];
-				$whichtype = $_POST["type"];
-				$whichname = $_POST["name"];
-				
-				$q = 'INSERT INTO food(weight, type, name) VALUES(' . $whichweight . ", '" . $whichtype . "', '" . $whichname . "')";
-				echo $q;
-				$r = mysqli_query($dbc, $q);
-				
-				?>
-				<center>
+					<center>
 					<button type="submit" name="submit" class="btn btn-primary">Post!</button>
 				</center>
+                </div>
 				</form>
+				<?php 
+				if(isset($_POST['submit'])) {
+					#Connecting to Local Server
+					$dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
+					mysqli_set_charset($dbc, 'utf8');
+					
+					$whichweight = $_POST["weight"];
+					$whichtype = $_POST["type"];
+					$whichname = $_POST["name"];
+					$whichdate = $_POST["date"];
+					
+					$q = 'INSERT INTO food(weight, type, name, date) VALUES(' . $whichweight . ", '" . $whichtype . "', '" . $whichname . "'," . $whichdate . ")";
+					echo $q;
+					$r = mysqli_query($dbc, $q);
+				}
+				?>
                 <div class="col-lg-12">
                         <h2>Active posts</h2>
                         <div class="table-responsive">

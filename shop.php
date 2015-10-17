@@ -178,23 +178,37 @@
 				
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <div class="caption">
-                                <h4><a href="#">First Product</a>
-                                </h4>
-                                <p>Placeholder</a>.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
+                            <!-- <div class="caption"> -->
+                                <h4><a href="#">Banana</a></h4>
+                                <p>6 lbs.</p>
+                                <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
+                                <button class="btn btn-primary">Reserve!</button>
+                            <!-- </div> -->
                         </div>
                     </div>
+
+                    <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Whole Foods</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Address: 226 E 57th St, New York, NY 10022</p>
+                        <p>Phone: (646) 497-1222</p>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Follow!</button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
 
                 </div>
 
