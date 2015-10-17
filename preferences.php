@@ -73,7 +73,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Profile - Edit Preferences<span class= "glyphicon glyphicon-user"></span></h2>
+				<h2>Profile - Edit Preferences</h2>
 				</form>
 			</div>
 		</div>
