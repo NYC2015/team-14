@@ -174,17 +174,56 @@
             <div class="col-md-6">
 
                 <div class="row">
-				
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+	
+	<?php 	
+	#Connecting to Local Server
+	$dbc = mysqli_connect('ec2-54-82-98-78.compute-1.amazonaws.com:3306', 'root', 'code4good', 'endhunger_db');
+	mysqli_set_charset($dbc, 'utf8');
+
+	$q = 'SELECT * FROM food;';
+		$r = mysqli_query($dbc, $q);
+	
+		$vendorname = array();
+		$name = array();
+		$weight = array();
+		$type = array();
+		$date = array();
+
+		while ($row = mysqli_fetch_array($r, MYSQLI_NUM)) {
+			array_push($name, $row[0]);
+			array_push($weight, $row[1]);
+			array_push($type, $row[2]);
+		}
+		
+		for ($counter = 0; $counter < count($name==TRUE); $counter++) {
+			echo'<div class="col-sm-10 col-lg-4 col-md-4">
+					<div class="container">
                         <div class="thumbnail">
-                            <!-- <div class="caption"> -->
-                                <h4><a href="#">Banana</a></h4>
-                                <p>6 lbs.</p>
-                                <p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
+
+                            <div class="caption">';
+                            echo '<h4><a href="#">' . $name[$counter] . '</a>
+                                </h4>';
+                             echo '<p>Weight: ' . $weight[$counter] . '</a></p>
+									<p>Type: ' . $type[$counter] . '</a></p>
+									
+							<div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+							<div class="col-sm-4 col-lg-4 col-md-4">
+								<div class="thumbnail">
+								<p><a data-toggle="modal" data-target="#myModal">Whole Foods</a></p>
                                 <button class="btn btn-primary">Reserve!</button>
-                            <!-- </div> -->
-                        </div>
-                    </div>
+								</div>
+							</div>';
+						}
+				?>
 
                     <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
