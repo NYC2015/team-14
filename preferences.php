@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FoodBuddy Profile<span class= "glyphicon glyphicon-user"></span></title>
+    <title>FoodBuddy Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Profile - Edit Preferences</h2>
+				<h2>Profile - Edit Preferences<span class= "glyphicon glyphicon-user"></span></h2>
 				</form>
 			</div>
 		</div>
