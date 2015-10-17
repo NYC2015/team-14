@@ -247,8 +247,8 @@
                     
                     <div class="form-group col-lg-6">
                         <label>Expiration date/time?</label>
-                        <div class="input-append date form_datetime" data-date="2015-10-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
-                            <input name = "date" class="form-control" type="text" value="" readonly>
+                        <div class="input-append date form_datetime" data-date="2015-10-16T05:25:07Z" data-link-field="dtp_input1">
+                            <input name = "date" class="form-control" type="text" value="">
                             <span class="add-on"><i class="icon-remove"></i></span>
                             <span class="add-on"><i class="icon-th"></i></span>
                         </div>
@@ -270,9 +270,8 @@
 					$whichweight = $_POST["weight"];
 					$whichtype = $_POST["type"];
 					$whichname = $_POST["name"];
-					$whichdate = $_POST["date"];
 					
-					$q = 'INSERT INTO food(weight, type, name, date) VALUES(' . $whichweight . ", '" . $whichtype . "', '" . $whichname . "'," . $whichdate . ")";
+					$q = 'INSERT INTO food(weight, type, name) VALUES(' . $whichweight . ", '" . $whichtype . "', '" . $whichname . "')";
 					echo $q;
 					$r = mysqli_query($dbc, $q);
 				}
