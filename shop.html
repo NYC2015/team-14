@@ -82,7 +82,13 @@
 	
     <!-- Page Content -->
     <div class="container">
-
+	
+	<?php 
+		if ($_POST["diet"] !== 'N/A'){
+			echo $_POST["diet"];
+		}
+	?>
+	
         <div class="row">
 
             <div class="col-md-9">
